@@ -1,0 +1,523 @@
+/* =========================================================
+   CUSTOMERPULSE GLOBAL STYLE
+   HealthTwin-inspired Lavender Theme
+   ========================================================= */
+
+/* ---------- Google Font ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+html,
+body,
+.stApp {
+    font-family: 'Manrope', sans-serif !important;
+}
+
+.stApp,
+.stAppViewContainer,
+.main,
+section.main {
+    background-color: #F8F5FC !important;
+}
+
+
+/* Force Manrope throughout Streamlit */
+
+.stApp * {
+    font-family: 'Manrope', sans-serif !important;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.main .block-container {
+    padding-top: 2rem !important;
+    padding-bottom: 3rem !important;
+    max-width: 1400px !important;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Manrope', sans-serif !important;
+    color: #56327F !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.4px !important;
+}
+
+h1 {
+    font-size: 2.2rem !important;
+}
+
+h2 {
+    font-size: 1.7rem !important;
+}
+
+h3 {
+    font-size: 1.35rem !important;
+}
+
+h4 {
+    font-size: 1.15rem !important;
+}
+
+
+/* =========================================================
+   NORMAL TEXT
+   ========================================================= */
+
+p,
+span,
+label,
+li {
+    font-family: 'Manrope', sans-serif !important;
+}
+
+p {
+    color: #78698A;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   STREAMLIT TITLE
+   ========================================================= */
+
+[data-testid="stTitle"] {
+    color: #56327F !important;
+    font-family: 'Manrope', sans-serif !important;
+    font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   HEADER / CUSTOM CARDS
+   ========================================================= */
+
+.cp-card {
+    background: #EDE3F8;
+    border: 1px solid #D8C5ED;
+    border-radius: 20px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 14px rgba(86, 50, 127, 0.07);
+}
+
+.cp-card-title {
+    color: #56327F;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.cp-card-text {
+    color: #78698A;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   KPI CARDS
+   ========================================================= */
+
+.cp-kpi {
+    background: #EDE3F8;
+    border: 1px solid #D8C5ED;
+    border-radius: 18px;
+    padding: 20px;
+    min-height: 120px;
+    box-shadow: 0 4px 14px rgba(86, 50, 127, 0.06);
+}
+
+.cp-kpi-label {
+    color: #78698A;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.cp-kpi-value {
+    color: #4B286F;
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+.cp-kpi-description {
+    color: #8C7B9D;
+    font-size: 0.78rem;
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   STREAMLIT METRICS
+   ========================================================= */
+
+[data-testid="stMetric"] {
+    background: #EDE3F8 !important;
+    border: 1px solid #D8C5ED !important;
+    border-radius: 18px !important;
+    padding: 20px !important;
+    box-shadow: 0 4px 14px rgba(86, 50, 127, 0.06) !important;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #78698A !important;
+    font-family: 'Manrope', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stMetricValue"] {
+    color: #4B286F !important;
+    font-family: 'Manrope', sans-serif !important;
+    font-weight: 800 !important;
+}
+
+[data-testid="stMetricDelta"] {
+    font-family: 'Manrope', sans-serif !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.stButton > button,
+.stDownloadButton > button {
+    background-color: #EDE3F8 !important;
+    color: #56327F !important;
+    border: 1px solid #D8C5ED !important;
+    border-radius: 12px !important;
+    font-family: 'Manrope', sans-serif !important;
+    font-weight: 600 !important;
+    padding: 0.55rem 1.1rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+    background-color: #DCC8EF !important;
+    border-color: #B98EDC !important;
+    color: #4B286F !important;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.stButton > button[kind="primary"] {
+    background-color: #B98EDC !important;
+    color: white !important;
+    border: 1px solid #B98EDC !important;
+}
+
+.stButton > button[kind="primary"]:hover {
+    background-color: #A979D0 !important;
+    border-color: #A979D0 !important;
+}
+
+
+/* =========================================================
+   INPUT FIELDS
+   ========================================================= */
+
+.stTextInput input,
+.stNumberInput input,
+.stTextArea textarea,
+.stDateInput input {
+    background-color: #FFFFFF !important;
+    color: #56327F !important;
+    border: 1px solid #D8C5ED !important;
+    border-radius: 10px !important;
+    font-family: 'Manrope', sans-serif !important;
+}
+
+.stTextInput input:focus,
+.stNumberInput input:focus,
+.stTextArea textarea:focus,
+.stDateInput input:focus {
+    border-color: #B98EDC !important;
+    box-shadow: 0 0 0 1px #B98EDC !important;
+}
+
+
+/* =========================================================
+   INPUT LABELS
+   ========================================================= */
+
+.stTextInput label,
+.stNumberInput label,
+.stTextArea label,
+.stDateInput label,
+.stSelectbox label,
+.stMultiSelect label,
+.stSlider label {
+    color: #56327F !important;
+    font-family: 'Manrope', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   SELECT BOX
+   ========================================================= */
+
+.stSelectbox > div > div,
+.stMultiSelect > div > div {
+    background-color: #FFFFFF !important;
+    border-color: #D8C5ED !important;
+    border-radius: 10px !important;
+    font-family: 'Manrope', sans-serif !important;
+}
+
+
+/* =========================================================
+   CHECKBOX / RADIO
+   ========================================================= */
+
+.stCheckbox label,
+.stRadio label {
+    font-family: 'Manrope', sans-serif !important;
+    color: #56327F !important;
+}
+
+
+/* =========================================================
+   SLIDER
+   ========================================================= */
+
+.stSlider {
+    font-family: 'Manrope', sans-serif !important;
+}
+
+
+/* =========================================================
+   EXPANDER
+   ========================================================= */
+
+.streamlit-expanderHeader {
+    background-color: #EDE3F8 !important;
+    border: 1px solid #D8C5ED !important;
+    border-radius: 12px !important;
+    color: #56327F !important;
+    font-family: 'Manrope', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   DATAFRAME / TABLE
+   ========================================================= */
+
+[data-testid="stDataFrame"] {
+    border: 1px solid #D8C5ED !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+}
+
+[data-testid="stDataFrame"] * {
+    font-family: 'Manrope', sans-serif !important;
+}
+
+
+/* =========================================================
+   ALERTS
+   ========================================================= */
+
+.stAlert {
+    border-radius: 12px !important;
+    font-family: 'Manrope', sans-serif !important;
+}
+
+
+/* =========================================================
+   CAPTION
+   ========================================================= */
+
+[data-testid="stCaptionContainer"] {
+    color: #78698A !important;
+    font-family: 'Manrope', sans-serif !important;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+hr {
+    border-color: #D8C5ED !important;
+}
+
+
+/* =========================================================
+   CONTAINERS / BORDERED CARDS
+   ========================================================= */
+
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background-color: #EDE3F8 !important;
+    border: 1px solid #D8C5ED !important;
+    border-radius: 18px !important;
+    box-shadow: 0 4px 14px rgba(86, 50, 127, 0.05) !important;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+section[data-testid="stSidebar"] {
+    background-color: #EDE3F8 !important;
+    border-right: 1px solid #D8C5ED !important;
+}
+
+section[data-testid="stSidebar"] * {
+    font-family: 'Manrope', sans-serif !important;
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+    color: #56327F !important;
+}
+
+
+/* =========================================================
+   TABS
+   ========================================================= */
+
+.stTabs [data-baseweb="tab"] {
+    font-family: 'Manrope', sans-serif !important;
+    color: #78698A !important;
+    font-weight: 600 !important;
+}
+
+.stTabs [aria-selected="true"] {
+    color: #56327F !important;
+}
+
+
+/* =========================================================
+   FOOTER CARD
+   ========================================================= */
+
+.cp-footer {
+    background: #EDE3F8;
+    border: 1px solid #D8C5ED;
+    border-radius: 16px;
+    padding: 16px 20px;
+    text-align: center;
+    margin-top: 30px;
+    color: #78698A;
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   RECOMMENDATION CARD
+   ========================================================= */
+
+.cp-recommendation {
+    background: #EDE3F8;
+    border: 1px solid #D8C5ED;
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin: 10px 0;
+    color: #56327F;
+    box-shadow: 0 3px 10px rgba(86, 50, 127, 0.05);
+}
+
+.cp-recommendation-title {
+    color: #56327F;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.cp-recommendation-text {
+    color: #78698A;
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.cp-section-title {
+    color: #56327F;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 18px 0 10px 0;
+}
+
+
+/* =========================================================
+   CHART CARD
+   ========================================================= */
+
+.cp-chart-card {
+    background: #EDE3F8;
+    border: 1px solid #D8C5ED;
+    border-radius: 18px;
+    padding: 12px;
+    box-shadow: 0 4px 14px rgba(86, 50, 127, 0.05);
+}
+
+
+/* =========================================================
+   HIDE STREAMLIT DEFAULT FOOTER
+   ========================================================= */
+
+footer {
+    visibility: hidden;
+}
+
+
+/* =========================================================
+   REMOVE DEFAULT STREAMLIT HEADER
+   ========================================================= */
+
+header[data-testid="stHeader"] {
+    background-color: transparent !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F8F5FC;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D8C5ED;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #B98EDC;
+}
