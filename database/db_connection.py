@@ -9,12 +9,18 @@ def get_connection():
     """
 
     try:
+            
         connection = mysql.connector.connect(
             host=st.secrets["mysql"]["host"],
+            port=st.secrets["mysql"]["port"],
             user=st.secrets["mysql"]["user"],
             password=st.secrets["mysql"]["password"],
-            database=st.secrets["mysql"]["database"]
+            database=st.secrets["mysql"]["database"],
+            ssl_ca=st.secrets["mysql"]["ssl_ca"],
+            ssl_verify_cert=True,
+            ssl_verify_identity=True
         )
+        
         return connection
 
     except mysql.connector.Error as err:
