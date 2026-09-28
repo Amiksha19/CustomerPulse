@@ -8,9 +8,7 @@ from utils.recommendation import get_recommendations
 from utils.prediction import (
     get_model,
     get_features,
-    get_label_encoders,
-    get_model_name,
-    get_accuracy
+    get_label_encoders
 )
 
 
@@ -246,9 +244,6 @@ st.markdown(
 model = get_model()
 features = get_features()
 label_encoders = get_label_encoders()
-
-model_name = get_model_name()
-model_accuracy = get_accuracy()
 
 
 # ============================================================
@@ -2626,12 +2621,6 @@ st.html(
 
         <div class="cp-footer-title">
             💜 CustomerPulse
-        </div>
-
-        <div class="cp-footer-text">
-            Customer Churn Analytics & Retention System
-            <br>
-            Model: {model_name} | Accuracy: {model_accuracy:.2%}
         </div>
 
     </div>
