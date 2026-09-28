@@ -827,50 +827,163 @@ with st.container(border=True):
         hide_index=True
     )
 
-
 # ============================================================
-# BUSINESS RECOMMENDATIONS
+# CUSTOMER BEHAVIOR INSIGHTS
 # ============================================================
 
 st.html(
     """
     <div class="cp-section">
-        📌 Business Recommendations
+        📌 Customer Behavior Insights
     </div>
     """
 )
 
+# ------------------------------------------------------------
+# CUSTOMER BEHAVIOR CALCULATIONS
+# ------------------------------------------------------------
 
-recommendations = [
-    "Contact customers who have been inactive for more than 30 days with personalized emails or push notifications.",
-
-    "Provide loyalty rewards or discounts to customers showing declining engagement.",
-
-    "Improve customer support for users reporting low satisfaction scores.",
-
-    "Recommend personalized content to increase daily watch time and engagement.",
-
-    "Monitor customers with both low engagement and long inactivity, as they are more likely to churn.",
-
-    "Use targeted promotional campaigns instead of sending offers to every customer, focusing on customers identified as high risk."
+# Customers inactive for more than 30 days
+inactive_30 = data[
+    data["Days_Since_Last_Activity"] > 30
 ]
 
+# Customers with low satisfaction
+low_satisfaction = data[
+    data["Customer_Satisfaction"] < 3
+]
 
-for i, recommendation in enumerate(
-    recommendations,
-    start=1
-):
+# Existing high-risk definition
+high_risk_count = len(risk)
+
+# Average engagement rate
+average_engagement = data["Engagement_Rate"].mean()
+
+# Average watch time for active customers
+active_data = data[
+    data["Churn_Status"] == "No"
+]
+
+# Average watch time for churned customers
+churned_data = data[
+    data["Churn_Status"] == "Yes"
+]
+
+if not active_data.empty:
+    active_watch_time = active_data["Daily_Watch_Time"].mean()
+else:
+    active_watch_time = 0
+
+if not churned_data.empty:
+    churned_watch_time = churned_data["Daily_Watch_Time"].mean()
+else:
+    churned_watch_time = 0
+
+
+# ------------------------------------------------------------
+# INSIGHT CARDS
+# ------------------------------------------------------------
+
+insight1, insight2, insight3 = st.columns(3)
+
+
+with insight1:
 
     st.html(
         f"""
-        <div class="cp-recommendation">
+        <div class="cp-kpi">
 
-            <span class="cp-recommendation-number">
-                {i}.
-            </span>
+            <div class="cp-kpi-label">
+                🕒 Inactive Customers
+            </div>
 
-            {recommendation}
+            <div class="cp-kpi-value">
+                {len(inactive_30):,}
+            </div>
+
+            <div class="cp-kpi-info">
+                Inactive for more than 30 days
+            </div>
 
         </div>
         """
     )
+
+
+with insight2:
+
+    st.html(
+        f"""
+        <div class="cp-kpi">
+
+            <div class="cp-kpi-label">
+                ⭐ Low Satisfaction
+            </div>
+
+            <div class="cp-kpi-value">
+                {len(low_satisfaction):,}
+            </div>
+
+            <div class="cp-kpi-info">
+                Satisfaction score below 3
+            </div>
+
+        </div>
+        """
+    )
+
+
+with insight3:
+
+    st.html(
+        f"""
+        <div class="cp-kpi">
+
+            <div class="cp-kpi-label">
+                ⚠️ High Risk Customers
+            </div>
+
+            <div class="cp-kpi-value">
+                {high_risk_count:,}
+            </div>
+
+            <div class="cp-kpi-info">
+                Based on inactivity and satisfaction
+            </div>
+
+        </div>
+        """
+    )
+
+
+# ------------------------------------------------------------
+# CUSTOMER BEHAVIOR SUMMARY
+# ------------------------------------------------------------
+
+st.html(
+    """
+    <div style="margin-top: 22px;">
+    </div>
+    """
+)
+
+st.html(
+    f"""
+    <div class="cp-recommendation">
+
+        <strong>📊 Customer Engagement</strong>
+        <br><br>
+
+        Average engagement rate across customers:
+        <strong>{average_engagement:.1f}</strong>
+
+        <br><br>
+
+        Active customers watch an average of
+        <strong>{active_watch_time:.2f} hours/day</strong>,
+        while churned customers watch an average of
+        <strong>{churned_watch_time:.2f} hours/day</strong>.
+
+    </div>
+    """
+)
