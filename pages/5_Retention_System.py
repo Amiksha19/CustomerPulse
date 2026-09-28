@@ -377,21 +377,10 @@ SITUATIONS = {
 
 
 # ============================================================
-# PDF FONT - TIMES NEW ROMAN
+# PDF FONT
 # ============================================================
-
-times_new_roman = r"C:\Windows\Fonts\times.ttf"
-times_new_roman_bold = r"C:\Windows\Fonts\timesbd.ttf"
-
-if os.path.exists(times_new_roman):
-    pdfmetrics.registerFont(
-        TTFont("TimesNewRoman", times_new_roman)
-    )
-
-if os.path.exists(times_new_roman_bold):
-    pdfmetrics.registerFont(
-        TTFont("TimesNewRoman-Bold", times_new_roman_bold)
-    )
+# ReportLab built-in Helvetica fonts are used for the PDF.
+# No external or Windows-specific font files are required.
 
 
 # ============================================================
@@ -414,7 +403,7 @@ def make_report(df, group, plan, region, situation, message):
     title_style = ParagraphStyle(
         "ReportTitle",
         parent=styles["Title"],
-        fontName="TimesNewRoman-Bold",
+        fontName="Helvetica-Bold",
         fontSize=21,
         textColor=colors.HexColor("#4B286F"),
         alignment=TA_CENTER,
@@ -424,7 +413,7 @@ def make_report(df, group, plan, region, situation, message):
     heading_style = ParagraphStyle(
         "ReportHeading",
         parent=styles["Heading2"],
-        fontName="TimesNewRoman-Bold",
+        fontName="Helvetica-Bold",
         fontSize=14,
         textColor=colors.HexColor("#4B286F"),
         spaceBefore=8,
@@ -434,7 +423,7 @@ def make_report(df, group, plan, region, situation, message):
     body_style = ParagraphStyle(
         "ReportBody",
         parent=styles["Normal"],
-        fontName="TimesNewRoman",
+        fontName="Helvetica",
         fontSize=9,
         leading=13,
         textColor=colors.HexColor("#56327F")
@@ -494,7 +483,7 @@ def make_report(df, group, plan, region, situation, message):
                 "FONTNAME",
                 (0, 0),
                 (-1, -1),
-                "TimesNewRoman"
+                "Helvetica"
             ),
             (
                 "FONTSIZE",
@@ -604,7 +593,7 @@ def make_report(df, group, plan, region, situation, message):
                 "FONTNAME",
                 (0, 0),
                 (-1, -1),
-                "TimesNewRoman"
+                "Helvetica"
             ),
             (
                 "FONTSIZE",
