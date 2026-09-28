@@ -2623,6 +2623,10 @@ st.html(
             💜 CustomerPulse
         </div>
 
+        <div class="cp-footer-text">
+            Customer Churn Analytics & Retention System
+        </div>
+
     </div>
     """
 )
